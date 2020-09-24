@@ -7,11 +7,8 @@
 
     <link rel="stylesheet" href="{%static 'reset.css'%}">
     <link rel="stylesheet" href="{%static 'game_result.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
-
-
     <!-- 화면 이동 -->
     <script>
     function fnMove(seq){
@@ -31,16 +28,13 @@
         <div class="collapse navbar-collapse" id="navbarNav"> 
             <ul class="nav justify-content-end">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#" onClick="move_to_Main"><button class="btn btn-light" onclick="fnMove('1')">오늘의 결과</button><span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#" onClick="move_to_Main" style="font-family: 'Jua', sans-serif;"><button class="btn btn-light" onclick="fnMove('1')">오늘의 명언</button><span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onClick="move_to_Rank"><button class="btn btn-light" onclick="fnMove('2')">하루일기</button></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onClick="move_to_Start"><button class="btn btn-light" onclick="fnMove('3')">추천해요!</button></a>
+                    <a class="nav-link" href="#" onClick="move_to_Rank" style="font-family: 'Jua', sans-serif;"><button class="btn btn-light" onclick="fnMove('2')">추천해요!</button></a>
                 </li>
                 <li>
-                    <a class="nav-link" href="#" onClick="move_to_Start"><button class="btn btn-light">로그아웃!</button></a>
+                    <a class="nav-link" href="{% url 'web_home'%}" onClick="move_to_Start " style="font-family: 'Jua', sans-serif;"><button class="btn btn-light">로그아웃</button></a>
                 </li>
             </ul>
         </div>
@@ -51,18 +45,17 @@
     <div id="div1">
     <br><br><br><br>
     <section id='content'>
-        <h1 id='main'>오늘의 결과</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h1 id='main' style="font-family: 'Jua', sans-serif;">오늘의 명언</h1>
         <br><br><br>
-        <div class='result'>
-            <h1>오늘의 {{user_data.name}}님의 등급은</h1>
-            <h1>Level 1. 완전 초보자 입니다.</h1>
-            <details>
-                <summary>등급 설명</summary>
-                <p>1단계</p>
-                <p>2단계</p>
-                <p>3단계</p>
-                <p>4단계</p>
-            </details>
+        <div class='result' style='text-align: center; font-size: 25px "font-family: 'Jua', sans-serif;"'>
+            <h1 style="font-family: 'Jua', sans-serif;">늦었다고 생각할 때가 가장 늦었다.</h1>
+            <h1 style="font-family: 'Jua', sans-serif;">그러니 지금부터 시작하라.</h1>
         </div>
     </section>
     </div>
@@ -77,27 +70,32 @@
     <div id="div2">
         <br><br><br><br>
         <section id='content'>
-            <h1 id='main'>하루일기</h1>
-            <div class='result'>
-                <h1>오늘의 일기</h1>
-                <link href="">등급설명 ></link>
+            <h1 id='main' style="font-family: 'Jua', sans-serif;">추천해요!</h1>
+            </br>
+            <div class='result' style='text-align: center; font-size: 25px; font-family: "Jua", sans-serif;'>
+                <h3 style="font-family: 'Jua', sans-serif;">1. 다른 요리 만들어보기</h>
+                </br>
+                <a style='text-align: center; font-size: 20px; font-family: "Jua", sans-serif;' href='https://www.youtube.com/results?search_query=%EC%98%A4%EB%AF%80%EB%9D%BC%EC%9D%B4%EC%8A%A4+%EB%A7%8C%EB%93%A4%EA%B8%B0'>오므라이스 만들기</a>
+                </br>
+                <a style='text-align: center; font-size: 20px; font-family: "Jua", sans-serif;' href='https://www.youtube.com/results?search_query=%EC%BF%A0%ED%82%A4+%EB%A7%8C%EB%93%A4%EA%B8%B0'>쿠키 만들기</a>
+                </br>
+                <a style='text-align: center; font-size: 20px; font-family: "Jua", sans-serif;' href='https://www.youtube.com/results?search_query=%EB%AF%B8%EB%8B%88+%ED%8C%AC%EC%BC%80%EC%9D%B4%ED%81%AC+%EB%A7%8C%EB%93%A4%EA%B8%B0'>미니 팬케이크 만들기</a>
+                </br>
+                <h3 style="font-family: 'Jua', sans-serif;">2. 더 다양한 언어 배워보기</h3>
+                <a style='text-align: center; font-size: 20px; font-family: "Jua", sans-serif;' href='https://www.youtube.com/results?search_query=%EC%9D%B4%ED%83%88%EB%A6%AC%EC%95%84%EC%96%B4+%EA%B8%B0%EC%B4%88%ED%9A%8C%ED%99%94'>이탈리아어 배우기</a>
+                </br>
+                <a style='text-align: center; font-size: 20px; font-family: "Jua", sans-serif;' href='https://www.youtube.com/results?search_query=%EB%8F%85%EC%9D%BC%EC%96%B4+%EA%B8%B0%EC%B4%88%ED%9A%8C%ED%99%94'>독일어 배우기</a>
+                </br>
+                <a style='text-align: center; font-size: 20px; font-family: "Jua", sans-serif;' href='https://www.youtube.com/results?search_query=%EC%95%84%EB%9E%8D%EC%96%B4+%EA%B8%B0%EC%B4%88%ED%9A%8C%ED%99%94'>아랍어 배우기</a>
+                </br>
+                <h3 style="font-family: 'Jua', sans-serif;">3.  새로운 취미 가져보기</h3>
+                <a style='text-align: center; font-size: 20px; font-family: "Jua", sans-serif;' href='https://www.youtube.com/results?search_query=%EC%8B%9D%EB%AC%BC%ED%82%A4%EC%9A%B0%EA%B8%B0'>식물 키우기</a>
+                </br>
+                <a style='text-align: center; font-size: 20px; font-family: "Jua", sans-serif;' href='https://www.youtube.com/results?search_query=%EB%85%B8%EB%9E%98%EC%97%B0%EC%8A%B5'>노래 연습하기</a>
+                </br>
+                <a style='text-align: center; font-size: 20px; font-family: "Jua", sans-serif;' href='https://www.youtube.com/results?search_query=%EC%86%8C%EB%AF%88%EB%A6%AC%EC%97%90'>소믈리에 체험하기</a>
+                </br>
             </div>
-        </section>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <div id="div3">
-        <br><br><br><br>
-        <section id='content'>
-            <h1 id='main'>추천해요!</h1>
-            <br><br><br>
-            <img id='심심해' src='../css/심심해.png' height='300px' width='300px'>
         </section>
     </div>
     <!-- JavaScript Libraries -->

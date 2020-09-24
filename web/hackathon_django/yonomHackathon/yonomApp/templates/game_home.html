@@ -287,7 +287,6 @@
 </body>
 </html {% endcomment %}
 
-
 <!DOCTYPE html>
 {%load static%}
 <html lang="en">
@@ -297,9 +296,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{%static 'game_home.css'%}">
     <title>game_home</title>
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
     </style>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script>
+    {% comment %} <script src="http://code.jquery.com/jquery-latest.js"></script> {% endcomment %}
+    {% comment %} <script>
     //$(function () {
         //$('img').click(function () {
             //클릭될때
@@ -318,169 +318,117 @@
             img.style.visibility = "visible";
 
     }
-    </script>
+    </script> {% endcomment %}
 </head>
 <body>
+
     <div class='container'>
-        <div id='table'>
-            <div id='table' border = "0">
-                <div id='row1'>
-                    <div class='con' height = "0">
-                        {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo1}}" height = 200px width = 200px></div>
-                        {% else %}
-                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
-                            {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
-                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
-                            </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
-                        {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo2 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo2}}" height = 200px width = 200px></div>
-                        {% else %}
-                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
-                            {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
-                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
-                            </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
-                        {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo3 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo3}}" height = 200px width = 200px></div>
-                        {% else %}
-                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
-                            {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
-                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
-                            </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
-                        {%endif %}
-                    </div>
+        <div id='table' class='table'>
+        <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST" class="table_form">
+        {% csrf_token %}
+            <div class="table1">
+                <div>
+                    {% if game_data.bingo1 %}
+                    <div class="table_content"><img id='1' src = "../media/{{game_data.bingo1}}" height = 200px width = 200px ></div>
+                    {% else %}
+                    <input type="file" name="image1">
+                    <div class="table_content"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px ></div>
+                    {% endif %}
                 </div>
-                <div id='row2'>
-                    <div class='con' height = "0">
-                        {% if user_data.bingo4 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo4}}" height = 200px width = 200px></div>
-                        {% else %}
-                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
-                            {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
-                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
-                            </form>
+                <div>
 
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
-                        {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo5 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo5}}" height = 200px width = 200px></div>
-                        {% else %}
-                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
-                            {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
-                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
-                            </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
-                        {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo6 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo6}}" height = 200px width = 200px></div>
-                        {% else %}
-                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
-                            {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
-                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
-                            </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
-                        {%endif %}
-                    </div>
+                    {% if game_data.bingo1 %}
+                    <div class="table_content"><img id='1' src = "../media/{{game_data.bingo2}}" height = 200px width = 200px></div>
+                    {% else %}
+                    <input type="file" name="image2">
+                    <div class="table_content"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                    {% endif %}
                 </div>
-                <div id='row3'>
-                    <div class='con' height = "0">
-                        {% if user_data.bingo7 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo7}}" height = 200px width = 200px></div>
-                        {% else %}
-                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
-                            {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
-                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
-                            </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
-                        {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo8 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo8}}" height = 200px width = 200px></div>
-                        {% else %}
-                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
-                            {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
-                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
-                            </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
-                        {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo9 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo9}}" height = 200px width = 200px></div>
-                        {% else %}
-                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
-                            {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
-                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
-                            </form>
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
-                        {%endif %}
-                    </div>
+                <div>
+                    {% if game_data.bingo1 %}
+                    <div class="table_content"><img id='1' src = "../media/{{game_data.bingo3}}" height = 200px width = 200px ></div>
+                    {% else %}
+                    <input type="file" name="image3">
+                    <div class="table_content"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px ></div>
+                    {% endif %}
                 </div>
+                
+            </div>
+            <div class="table2">
+                <div>
+                    {% if game_data.bingo1 %}
+                    <div class="table_content"><img id='1' src = "../media/{{game_data.bingo4}}" height = 200px width = 200px ></div>
+                    {% else %}
+                    <input type="file" name="image4">
+                    <div class="table_content"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px ></div>
+                    {% endif %}
+                </div>
+                <div>
+
+                    {% if game_data.bingo1 %}
+                    <div class="table_content"><img id='1' src = "../media/{{game_data.bingo5}}" height = 200px width = 200px ></div>
+                    {% else %}
+                    <input type="file" name="image5">
+                    <div class="table_content"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px ></div>
+                    {% endif %}
+                </div>
+                <div>
+
+                    {% if game_data.bingo1 %}
+                    <div class="table_content"><img id='1' src = "../media/{{game_data.bingo6}}" height = 200px width = 200px ></div>
+                    {% else %}
+                    <input type="file" name="image6">
+                    <div class="table_content"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px ></div>
+                    {% endif %}
+                </div>
+                
+            </div>
+            <div class="table3">
+                <div>
+                    {% if game_data.bingo1 %}
+                    <div class="table_content"><img id='1' src = "../media/{{game_data.bingo7}}" height = 200px width = 200px ></div>
+                    {% else %}
+                    <input type="file" name="image7">
+                    <div class="table_content"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px ></div>
+                    {% endif %}
+                </div>
+                <div>
+                    {% if game_data.bingo1 %}
+                    <div class="table_content"><img id='1' src = "../media/{{game_data.bingo8}}" height = 200px width = 200px ></div>
+                    {% else %}
+                    <input type="file" name="image8">
+                    <div class="table_content"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px ></div>
+                    {% endif %}
+                </div>
+                <div>
+
+                    {% if game_data.bingo1 %}
+                    <div class="table_content"><img id='1' src = "../media/{{game_data.bingo9}}" height = 200px width = 200px ></div>
+                    {% else %}
+                    <input type="file" name="image9">
+                    <div class="table_content"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px ></div>
+                    {% endif %}
+                </div>
+                
             </div>
         </div>
+        <button type="submit">제출</button>
+        </form>
+
         <div id='section'>
-            <h1 id="comment_main">당신의 피드를 꾸며보세용</h1>
-            <p id='comment_explain'>
-                1. 어쩌구<br>
-                1. 어쩌구<br>
-                1. 어쩌구<br>
-                1. 어쩌구<br>
-                1. 어쩌구<br>
-                1. 어쩌구<br>
-                1. 어쩌구<br>
-                1. 어쩌구<br>
-                1. 어쩌구<br></p>
+            <h1 id="comment_main" style="font-family: 'Jua', sans-serif;">당신의 피드를 꾸며보세용</h1>
+            <p id='comment_explain' style="font-family: 'Jua', sans-serif;">
+                1. 내가 가고싶은 곳 사진올리기<br>
+                2. 내가 건강하게 차려서 식사해보기<br>
+                3. 안입는 옷 1가지 꼭 버리기<br>
+                4. 영화보기(라라랜드,레옹,비긴어게인)<br>
+                5. 프랑스어 재밌는 간단 회화 외우기<br>
+                6. 1시간 낮잠자기<br>
+                7. 안마셔본 술 마셔보기(인스타 공유)<br>
+                8. 졸업앨범 다시보기<br>
+                9. 삼불점 만들기(★★★★★)<br></p>
             <div id='check'>
-                <p id='check1'>당신의 등급은?</p>
-                <button id='check_btn'>확인하기</button>
+                <a href="{%url 'game_result' %}"><p id='check1' style="font-family: 'Jua', sans-serif;">당신의 등급은?</p></a>
             </div>
         </div>
     </div>    

@@ -13,11 +13,6 @@ def web_home(request):
     return render(request, 'web_home.html')
 
 
-def game_login(request):
-
-    return render(request, 'game_login.html')
-
-
 def game_home(request):
     ## login data가 있는 경우
     # if request.POST['name']:
@@ -49,40 +44,49 @@ def game_result(request):
 
     return  render(request, 'game_result.html', context)
 
+
+
+
 def data_insert(request):
 
-    name = request.POST['onloggin'] 
-    all_data = []
-    for i in range(9):
-        strint = str(i+1)
-        print(strint)
-        imagenum = 'image' + strint
-        print(imagenum)
-        data = request.FILES[imagenum]
-        if data:
-            all_data.append(data)
-        else:
-            all_data.append(0)
-
-    print(all_data)
-    print(len(all_data))
-
-    if game_data.objects.get(user_name=name):
-        data_delete = game_data.objects.get(user_name=name)
-        data_delete.delete()
-
-        data_input = game_data(user_name = name, bingo1 = all_data[0], bingo2 = all_data[1], bingo3 = all_data[2], bingo4 = all_data[3], bingo5 = all_data[4], bingo6 = all_data[5], bingo7 = all_data[6], bingo8 = all_data[7], bingo9 = all_data[8])
-        data_input.save()
-        
-        user_data = game_data.objects.get(user_name=name)
     
-    context = { 'user_data' : user_data}
+    user_names = request.user.username
+
+
+    data1 = request.FILES['image1']
+    data2 = request.FILES['image2']
+    data3 = request.FILES['image3']
+    data4 = request.FILES['image4']
+    data5 = request.FILES['image5']
+    data6 = request.FILES['image6']
+    data7 = request.FILES['image7']
+    data8 = request.FILES['image8']
+    data9 = request.FILES['image9']
+    
+    
+    game_datas = game_data(user_name = user_names, bingo1=data1 , bingo2=data2, bingo3=data3,bingo4=data4 ,bingo5=data5, bingo6=data6, bingo7=data7, bingo8=data8, bingo9=data9)
+    game_datas.save()
+
+    # if game_data.objects.get(user_name=name):
+    #     data_delete = game_data.objects.get(user_name=name)
+    #     data_delete.delete()
+
+    #     data_input = game_data(user_name = name, bingo1 = all_data[0], bingo2 = all_data[1], bingo3 = all_data[2], bingo4 = all_data[3], bingo5 = all_data[4], bingo6 = all_data[5], bingo7 = all_data[6], bingo8 = all_data[7], bingo9 = all_data[8])
+    #     data_input.save()
+        
+    #     user_data = game_data.objects.get(user_name=name)
+    
+    context = { 'game_data' : game_datas}
 
     return render(request, 'game_home.html', context)
+
+
+
 
 def web_home(request):
 
     return render(request, 'web_home.html')
+
 
 
 
