@@ -19,6 +19,9 @@ ERROR_MSG = {
 
 
 
+
+
+
 def login(request):
     context = {
         'error': {
@@ -32,6 +35,24 @@ def login(request):
 
     
     if request.method == "POST":
+
+        if request.POST['flag']=='signup':
+            user_id = request.POST['user_id']
+            user_pw = request.POST['user_pw']
+
+            user = User.objects.create_user(
+                username=user_id,
+                password=user_pw,
+            )
+            Bangkoker.objects.create(
+                user=user
+            )
+
+            auth.login(request, user)
+
+            return render(request, 'game.html')
+            
+
 
         user_id = request.POST['user_id']
         user_pw = request.POST['user_pw']
@@ -71,25 +92,12 @@ def login(request):
             context['error']['msg'] = ERROR_MSG['ID_PW_MISSING']
             context['error']['state'] = True    
 
-        
-    print('♥♥♥♥♥♥♥♥♥♥♥♥', context)    
+         
     return render(request, 'login.html', context)
 
 
-def signup(request):
-    user_id = request.POST['user_id']
-    user_pw = request.POST['user_pw']
 
-    user = User.objects.create_user(
-        username=user_id,
-        password=user_pw,
-    )
-    Bangkoker.objects.create(
-        user=user
-    )
 
-    auth.login(request, user)
-    return render(request, 'game.html')
 
 
     def logout(request):

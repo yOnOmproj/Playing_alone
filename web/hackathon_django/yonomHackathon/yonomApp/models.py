@@ -5,3 +5,6 @@ from django.contrib.auth.models import User
 class Bangkoker(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='bangkoker')
     # Add image data
+    bingo1 = 
+    bingo2 = 
+    
