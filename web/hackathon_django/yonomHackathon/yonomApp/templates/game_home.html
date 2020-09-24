@@ -3,10 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>game_home</h1>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/game.css">
+    <title>game_home</title>
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    //$(function () {
+        //$('img').click(function () {
+            //클릭될때
+            //$( 'img' ).fadeOut();
+            // $('img').attr('src', $(this).attr('href'));
+    //img의 src 속성값을 this(해당태그(img)의 href 값으로 바꿔라 
+            //return false; // 페이지 전환 막기
 
+        //});
+    //});
+
+    function changeMap(){
+        if (img.style.visibility == "visible")
+            img.style.visibility = "hidden";
+        else
+            img.style.visibility = "visible";
+
+    }
+    </script>
+</head>
+
+
+
+<body>
+    <div class='container'>
+        <div id='table'>
+            <table id='table' border = "0">
+                <tr>
+                    <td height = "0">
+                        <a href="JavaScript:changeMap()">
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
+                        </a>
+                    </td>
+                    <td>
+                        <span id='2' style = "font-size : 100px;">
+                    </td>
+                    <td>
+                        <div id ='3' style = "height:100%"><img src = "../static/image/심심해.png" height = "100%"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height = "0">
+                        <div style = "height:100%"><img src = "../static/image/심심해.png" height = "100%"></div>
+                    </td>
+                    <td>
+                        <div style = "height:100%"><img src = "../static/image/심심해.png" height = "100%"></div>
+                    </td>
+                    <td>
+                        <div style = "height:100%"><img src = "../static/image/심심해.png" height = "100%"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height = "0">
+                        <div style = "height:100%"><img src = "../static/image/심심해.png" height = "100%"></div>
+                    </td>
+                    <td>
+                        <div style = "height:100%"><img src = "../static/image/심심해.png" height = "100%"></div>
+                    </td>
+                    <td>
+                        <div style = "height:100%"><img src = "../static/image/심심해.png" height = "100%"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id='section'>
+            <h1 id="comment_main">당신의 피드를 꾸며보세용</h1>
+            <p id='comment_explain'>
+                1. 어쩌구<br>
+                1. 어쩌구<br>
+                1. 어쩌구<br>
+                1. 어쩌구<br>
+                1. 어쩌구<br>
+                1. 어쩌구<br>
+                1. 어쩌구<br>
+                1. 어쩌구<br>
+                1. 어쩌구<br></p>
+            <div id='check'>
+                <p id='check1'>당신의 등급은?</p>
+                <button id='check_btn'>확인하기</button>
+            </div>
+        </div>
+    </div>    
 </body>
-</html>
+</html
