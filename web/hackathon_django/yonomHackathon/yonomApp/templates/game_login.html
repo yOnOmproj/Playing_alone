@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>game_login</h1>   
+    <h1>game_login</h1> 
+    <form action="{%url 'assert_login' %}" method="POST">
+    {% csrf_token %}
+        <input type="text" name = "name"/>
+        <button type="sumbit">확인</button>
+    </form>
 </body>
 </html>

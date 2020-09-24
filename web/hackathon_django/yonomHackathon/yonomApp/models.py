@@ -20,5 +20,5 @@ class game_data(models.Model):
     bingo9 = models.ImageField(upload_to='bingo', null=True)
 
     def __str__(self):
-        return self.name
+        return self.user_name
     

@@ -26,4 +26,6 @@ urlpatterns = [
     path('game_home/', views.game_home, name="game_home"),
     path('game_login/', views.game_login, name="game_login"),
     path('game_result', views.game_result, name="game_result"),
+    path('assert_login', views.assert_login, name="assert_login"),
+    path('data_insert', views.data_insert, name="data_insert"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

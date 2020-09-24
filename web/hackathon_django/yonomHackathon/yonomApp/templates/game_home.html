@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../static/game.css">
+    <link rel="stylesheet" href="{%static 'game_home.css'%}">
     <title>game_home</title>
     </style>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -38,9 +39,19 @@
             <table id='table' border = "0">
                 <tr>
                     <td height = "0">
-                        <a href="JavaScript:changeMap()">
+                        {% if user_data.bingo1 %}
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo1}}" width: "450px" height = "50%" ></div>
+                        {% else %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="file" name="image">
+                            <button type="submit">확인</button>
+                            <p>{{user_data.user_name}}</p>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+
                             <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
-                        </a>
+                        {%endif %}
                     </td>
                     <td>
                         <span id='2' style = "font-size : 100px;">
