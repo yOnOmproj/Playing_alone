@@ -30,152 +30,241 @@
     }
     </script>
 </head>
+
+
+
 <body>
     <div class='container'>
         <div id='table'>
-            <div id='table' border = "0">
-                <div id='row1'>
-                    <div class='con' height = "0">
+            <table id='table' border = "0">
+                <tr>
+                    <td height = "0">
                         {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo1}}" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo1}}"  height = "100%" ></div>
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="image1" value="{{user_data.bingo1}}">
+                            </form>
+                        {% elif user_data.bingo1 == 0 %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <div class='input'>
+                            <input type="file" name="image1"><button type="submit">okay</button>
+                            </div>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {% else %}
                             <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
                             {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
+                            <div class='input'>
+                            <input type="file" name="image1"><button type="submit">okay</button>
+                            </div>
                             <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
                             </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo2}}" height = 200px width = 200px></div>
+                    </td>
+                    <td>
+                        {% if user_data.bingo2 %}
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo2}}"  height = "100%" ></div>
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="image2" value="{{user_data.bingo2}}">
+                            </form>
+                        {% elif user_data.bingo2 == 0 %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="file" name="image2"><button type="submit">확인</button>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {% else %}
                             <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
                             {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
+                            <div class='input'>
+                            <input type="file" name="image2"><button type="submit">okay</button>
+                            </div>
                             <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
                             </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
+                    
                         {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo3}}" height = 200px width = 200px></div>
+                    </td>
+                    <td>
+                        {% if user_data.bingo3 %}
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo3}}"  height = "100%" ></div>
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="image3" value="{{user_data.bingo3}}">                            
+                        {% elif user_data.bingo3 == 0 %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="file" name="image3"><button type="submit">확인</button>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {% else %}
                             <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
                             {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
+                            <div class='input'>
+                            <input type="file" name="image3"><button type="submit">okay</button>
+                            </div>
                             <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
                             </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {%endif %}
-                    </div>
-                </div>
-                <div id='row2'>
-                    <div class='con' height = "0">
-                        {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo4}}" height = 200px width = 200px></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height = "0">
+                        {% if user_data.bingo4 %}
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo4}}"  height = "100%" ></div>
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="image4" value="{{user_data.bingo4}}">
+                        {% elif user_data.bingo4 == 0 %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="file" name="image4"><button type="submit">확인</button>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {% else %}
                             <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
                             {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
+                            <div class='input'>
+                            <input type="file" name="image4"><button type="submit">okay</button>
+                            </div>
                             <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
                             </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>                            
                         {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo5}}" height = 200px width = 200px></div>
+                    </td>
+                    <td>
+                        {% if user_data.bingo5 %}
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo5}}"  height = "100%" ></div>
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="image5" value="{{user_data.bingo5}}">
+                        {% elif user_data.bingo5 == 0 %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="file" name="image5"><button type="submit">확인</button>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {% else %}
                             <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
                             {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
+                            <div class='input'>
+                            <input type="file" name="image5"><button type="submit">okay</button>
+                            </div>
                             <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
                             </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo6}}" height = 200px width = 200px></div>
+                    </td>
+                    <td>
+                        {% if user_data.bingo6 %}
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo6}}"  height = "100%" ></div>
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="image6" value="{{user_data.bingo6}}">
+                        {% elif user_data.bingo6 == 0 %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="file" name="image6"><button type="submit">확인</button>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {% else %}
                             <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
                             {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
+                            <div class='input'>
+                            <input type="file" name="image6"><button type="submit">okay</button>
+                            </div>
                             <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
                             </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {%endif %}
-                    </div>
-                </div>
-                <div id='row3'>
-                    <div class='con' height = "0">
-                        {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo7}}" height = 200px width = 200px></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td height = "0">
+                        {% if user_data.bingo7 %}
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo7}}"  height = "100%" ></div>
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="image7" value="{{user_data.bingo7}}">
+                        {% elif user_data.bingo7 == 0 %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="file" name="image7"><button type="submit">확인</button>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {% else %}
                             <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
                             {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
+                            <div class='input'>
+                            <input type="file" name="image7"><button type="submit">okay</button>
+                            </div>
                             <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
                             </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo8}}" height = 200px width = 200px></div>
+                    </td>
+                    <td>
+                        {% if user_data.bingo8 %}
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo8}}"  height = "100%" ></div>
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="image8" value="{{user_data.bingo8}}">
+                        {% elif user_data.bingo8 == 0 %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="file" name="image8"><button type="submit">확인</button>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {% else %}
                             <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
                             {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
+                            <div class='input'>
+                            <input type="file" name="image8"><button type="submit">okay</button>
+                            </div>
                             <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
                             </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {%endif %}
-                    </div>
-                    <div class='con'>
-                        {% if user_data.bingo1 %}
-                            <div style = "height:100%"><img id='11' src = "../media/{{user_data.bingo9}}" height = 200px width = 200px></div>
+                    </td>
+                    <td>
+                        {% if user_data.bingo9 %}
+                            <div style = "height:100%"><img id='1' src = "../media/{{user_data.bingo9}}"  height = "100%" ></div>
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="image9" value="{{user_data.bingo9}}">
+                        {% elif user_data.bingo9 == 0 %}
+                            <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            <input type="file" name="image9"><button type="submit">확인</button>
+                            <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
+                            </form>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {% else %}
                             <form action="{% url 'data_insert' %}" enctype="multipart/form-data" method="POST">
                             {% csrf_token %}
-                            <input type="file" name="image">
-                            <button type="submit">확인</button>
-                            <p>{{user_data.user_name}}</p>
+                            <div class='input'>
+                            <input type="file" name="image9"><button type="submit">okay</button>
+                            </div>
                             <input type="hidden" value="{{user_data.user_name}}" name="onloggin" />
                             </form>
-
-                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = 200px width = 200px></div>
+                            <div style = "height:100%"><img id='1' src = "../static/image/심심해.png" height = "100%" ></div>
                         {%endif %}
-                    </div>
-                </div>
-            </div>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div id='section'>
             <h1 id="comment_main">당신의 피드를 꾸며보세용</h1>
@@ -191,7 +280,7 @@
                 1. 어쩌구<br></p>
             <div id='check'>
                 <p id='check1'>당신의 등급은?</p>
-                <button id='check_btn'>확인하기</button>
+                <a href="{% url 'game_result'%}">{% csrf_token %}<button id='check_btn'>확인하기</button></a>
             </div>
         </div>
     </div>    
