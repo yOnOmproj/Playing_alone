@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>혼자 뭐하지?</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="{%static 'reset.css'%}">
+    <link rel="stylesheet" href="{%static 'web_home.css'%}">
+
+
+    <!-- 웹 폰트 -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- HTLM5shiv ie6~8 -->
+    <!--[if lt IE 9]> 
+        <script src="js/html5shiv.min.js"></script>
+        <script type="text/javascript">
+            alert("현재 당신이 보는 브라우저는 지원하지 않습니다. 최신 브라우저로 업데이트해주세요!");
+        </script>
+    <![endif]-->
+
+    <!-- 화면 이동 -->
+    <script>
+    function fnMove(seq){
+        var offsetstr = $("#div"+seq).offset();
+        $('html, body').animate({scrollTop : offsetstr.top}, 500);
+    }
+    </script>
+</head>
+<body>
+    <!-- <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="header">
+                    <div class="header_menu">
+                        <a href="fnMove('1')">시작하기</a>
+                        <a href="fnMove('2')">등급설명</a>
+                        <a href="fnMove('3')">만든사람</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">yOnOm</a>
+        <div class="collapse navbar-collapse" id="navbarNav"> 
+            <ul class="nav justify-content-end">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onClick="move_to_Main"><button class="btn btn-light" onclick="fnMove('1')">혼자 뭐하지?</button><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onClick="move_to_Rank"><button class="btn btn-light" onclick="fnMove('2')">시작하기</button></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onClick="move_to_Start"><button class="btn btn-light" onclick="fnMove('3')">만든사람</button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <!-- //header -->
+    <div id="div1">
+    <br><br><br><br>
+    <section id='content'>
+        <h1 id='main'>혼자 뭐하지?</h1>
+        <br><br><br>
+        <img id='심심해' src='../static/image/심심해.png' height='300px' width='300px'>
+    </section>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <div id="div2">
+        <br><br><br><br>
+        <section id='content'>
+            <h1 id='main'>시작하기</h1>
+            <br><br><br>
+            <img id='심심해' src='../static/image/심심해.png' height='300px' width='300px'>
+        </section>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <div id="div3">
+        <br><br><br><br>
+        <section id='content'>
+            <h1 id='main'>만든사람</h1>
+            <br><br><br>
+            <img id='심심해' src='../static/image/심심해.png' height='300px' width='300px'>
+        </section>
+    </div>
+    <!-- JavaScript Libraries -->
+    <!-- <script src="js/jquery.min_1.12.4.js"></script> -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- <script src="js/modernizr-custom.js"></script> -->
+
+</body>
+</html>
