@@ -1,4 +1,4 @@
-.container{
+/* .container{
     display: flex;
     padding : 5%;
 }
@@ -32,5 +32,45 @@
 
 .input{
     display:flex;
-    
+
+} */
+
+.container{
+    display: flex;
+    padding : 5%;
+}
+#table{
+    text-align: center;
+}
+#section{
+    padding-top: 5%;
+}
+#comment_main{
+    text-align: center;
+    font-size: 50px;
+    padding-left: 50px;
+}
+#comment_explain{
+    padding-left: 100px;
+    font-size: 20px;
+}
+#check{
+    text-align: center;
+    display: flex;
+    padding-left: 20%;
+}
+#check1{
+    font-size: 30px;
+}
+#check_btn{
+    height: 40px;
+}
+#row1{
+    display: flex;
+}
+#row2{
+    display: flex;
+}
+#row3{
+    display: flex;
 }
