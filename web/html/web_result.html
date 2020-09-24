@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/web_result.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+
+
+    <!-- 화면 이동 -->
+    <script>
+    function fnMove(seq){
+        var offsetstr = $("#div"+seq).offset();
+        $('html, body').animate({scrollTop : offsetstr.top}, 500);
+    }
+    </script>
+
+
+    <title>Result</title>
+</head>
+<body>
+    
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">yOnOm</a>
+        <div class="collapse navbar-collapse" id="navbarNav"> 
+            <ul class="nav justify-content-end">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" onClick="move_to_Main"><button class="btn btn-light" onclick="fnMove('1')">오늘의 결과</button><span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onClick="move_to_Rank"><button class="btn btn-light" onclick="fnMove('2')">하루일기</button></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onClick="move_to_Start"><button class="btn btn-light" onclick="fnMove('3')">추천해요!</button></a>
+                </li>
+                <li>
+                    <button>로그아웃</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br><br><br><br>
+    <!-- //header -->
+    <div id="div1">
+    <br><br><br><br>
+    <section id='content'>
+        <h1 id='main'>오늘의 결과</h1>
+        <br><br><br>
+        <div class='result'>
+            <h1>오늘의 민지님의 등급은</h1>
+            <h1>Level 1. 완전 초보자 입니다.</h1>
+            <details>
+                <summary>등급 설명</summary>
+                <p>1단계</p>
+                <p>2단계</p>
+                <p>3단계</p>
+                <p>4단계</p>
+            </details>
+        </div>
+    </section>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <div id="div2">
+        <br><br><br><br>
+        <section id='content'>
+            <h1 id='main'>하루일기</h1>
+            <div class='result'>
+                <h1>오늘의 일기</h1>
+                <link href="">등급설명 ></link>
+            </div>
+        </section>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br><br>
+    <br><br><br>
+    <br><br><br>
+    <div id="div3">
+        <br><br><br><br>
+        <section id='content'>
+            <h1 id='main'>추천해요!</h1>
+            <br><br><br>
+            <img id='심심해' src='../css/심심해.png' height='300px' width='300px'>
+        </section>
+    </div>
+    <!-- JavaScript Libraries -->
+    <!-- <script src="js/jquery.min_1.12.4.js"></script> -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- <script src="js/modernizr-custom.js"></script> -->
+    
+</body>
+</html>
