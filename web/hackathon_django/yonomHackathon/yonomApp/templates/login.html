@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>혼자 뭐하지?</h1>
+
+    <form action="{% url 'login' %}" method='POST'>{% csrf_token %}
+        <input type='text' placeholder='이름 또는 닉네임' name='user_id' />
+        <br/>
+        <input type="password" placeholder="비밀번호 8자 이상" name="user_pw" />
+        <br/>
+        <button type="submit">로그인 > </button>
+    {% if error.state %}
+        <h3>{{error.msg}}</h3>
+        {% if error.condition == 'ID_NOT_EXIST' %}
+            <form action="{% url 'signup' %}" method='POST'>{% csrf_token %}
+                <input type='text' value={{user_id}} />
+                <input type='password' value={{user_pw}}/>
+                <button type="submit"> Yes </button>
+            </form>
+            <button type="submit"> No </button>
+        {% endif %}
+    {% endif %}
+    </form>
+    
+</body>
+</html>

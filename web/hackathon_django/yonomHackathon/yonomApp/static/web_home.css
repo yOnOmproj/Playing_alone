@@ -12,6 +12,9 @@
 #main{ font-size: 100px;}
 #content{ text-align: center;}
 
+section{
+    height: 700px;
+}
 
 /* media query*/
 /* @media (max-width: 1220px){
