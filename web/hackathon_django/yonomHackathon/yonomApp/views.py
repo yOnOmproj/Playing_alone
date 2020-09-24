@@ -17,25 +17,31 @@ def game_login(request):
 
 def game_home(request):
     ## login data가 있는 경우
-    if request.POST['name']:
-        login_name = request.POST['name']
+    # if request.POST['name']:
+    #     login_name = request.POST['name']
 
 
-        all_login_data = login.objects.all()
+    #     all_login_data = login.objects.all()
 
-        if login_name in all_login_data.name:
-            user_data = login.objects.get(user_name=login_name) 
+    #     if login_name in all_login_data.name:
+    #         user_data = game_data.objects.get(user_name=login_name) 
 
-        else:
-            create_user = login(name=login_name)
-            create_user.save()
+    #     else:
+    #         create_user = login(name=login_name)
+    #         create_user.save()
 
-            create_user_data = game_data(user_name=login_name)
-            create_user.data.save()
-    else:
-        pass
+    #         create_user_data = game_data(user_name=login_name)
+    #         create_user_data.save()
+
+    #         user_data = game_data.objects.get(user_name = login_name)
+
+
     return render(request, 'game_home.html')
+
 def game_result(request):
 
+    user_data = login.objects.get(name = "성빈")
 
-    return  render(request, 'game_result.html')
+    context = { 'user_data' : user_data}
+
+    return  render(request, 'game_result.html', context)
