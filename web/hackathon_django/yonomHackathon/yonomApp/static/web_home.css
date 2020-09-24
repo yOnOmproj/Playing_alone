@@ -18,3 +18,85 @@
     .container {width: 100%;}
     .row {padding: 0 15px;}
 } */
+
+
+section{
+    margin-right : 5%;
+    margin-left : 5%;
+    text-align: center;
+
+    height: 600px;
+}
+h1{
+    font-family: 'Jua', sans-serif;
+    text-align: center;
+}
+h3{
+    font-family: 'Jua', sans-serif;
+    text-align: center;
+}
+
+.team_info{
+    width: 100%;
+    height: 100%;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.team_info_1{
+    width: 100%;
+    height: 50%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.team_info_2{
+    width: 100%;
+    height: 50%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.team_info_1_1{
+    width: 50%;
+    height: 100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.team_info_1_2{
+    width: 50%;
+    height: 100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.team_info_2_1{
+    width: 50%;
+    height: 100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.team_info_2_2{
+
+    width: 50%;
+    height: 100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start {
+    display:flex;
+    justify-content: center;
+    
+}

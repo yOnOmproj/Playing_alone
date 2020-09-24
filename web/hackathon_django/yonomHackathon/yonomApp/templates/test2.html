@@ -1,0 +1,132 @@
+<html>
+
+<head>
+
+<title>MouseWheel</title>
+
+<style type="text/css">
+
+    html,body{ margin:10px;padding:10px;width:100%;height:100%;}
+
+    .box{ width:100%;height:100%;position:relative;font-size:24pt; font-family: 'Jua', sans-serif;}
+    .last{
+        display:flex;
+        justify-content: space-between;
+    }
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+<script type="text/javascript">
+    jQuery(document).on("ready", function() {
+        jQuery(".box").each(function () {
+            
+            // 개별적으로 Wheel 이벤트 적용
+            jQuery(this).on("mousewheel DOMMouseScroll", function(event) {
+
+                var delta = 0;
+                var moveTop = null;
+                var boxMax = jQuery(".box").length - 1;
+
+                var winEvent = "";
+
+                  
+                if(!winEvent) {
+                    winEvent = window.event;
+                }
+
+                if(winEvent.wheelDelta) {
+
+                    delta = winEvent.wheelDelta / 120;
+                    if(window.opera) {
+                        delta = -delta;
+                    }
+                }
+
+               
+                else if(winEvent.detail) {
+                    delta = -winEvent.detail / 3;
+                }
+                
+                // 마우스휠을 위에서 아래로 이동
+                if(delta < 0) {
+
+                    // 마지막 BOX 보다 순서값이 작은 경우에 실행
+                    if(jQuery(this).index() < boxMax) {
+                        
+                        console.log("▼");
+                        if(jQuery(this).next() != undefined) {
+                            moveTop = jQuery(this).next().offset().top;
+                        }
+                    }
+
+                    // 마지막 BOX보다 더 아래로 내려가려고 하는경우 알림창 출력
+                    else {
+
+                        return false;
+                    }
+                }
+
+                // 마우스휠을 아래에서 위로 이동
+                else {
+
+                    // 첫번째 BOX 보다 순서값이 큰 경우에 실행
+                    if(jQuery(this).index() > 0) {
+
+                        console.log("▲");
+                        if(jQuery(this).prev() != undefined) {
+                            moveTop = jQuery(this).prev().offset().top;
+                        }
+                    }
+
+                    // 첫번째 BOX 더 위로 올라가려고 하는 경우 알림창 출력
+                    else {
+
+                        return false;
+                    }
+                }
+
+                // 화면 이동 0.8초(800)
+                jQuery("html,body").stop().animate({
+                    scrollTop : moveTop + "px"
+                }
+                , {
+                    duration: 400, complete : function () { }
+                });
+            });
+        });
+    });
+</script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="box" style="background-color:#FF0000; background: url('../static/image/image1.jpg') no-repeat fixed 50% 50%/100% 100%; ">
+        <h1>지금 집에 혼자 있는 너!</h1>
+        {% comment %} <img src='../static/image/image1.jpg' height='300px' width='700px'> {% endcomment %}
+    </div>
+    <div class="box" style="background-color:#FF4500; background: url('../static/image/image2.jpg') no-repeat fixed 50% 50%/100% 100%;">
+        <h1>코로나가 무섭다고 아무것도 안하는 너!</h1>
+    </div>
+    <div class="box" style="background-color:#91ff00; background: url('../static/image/image3.jpg') no-repeat fixed 50% 50%/100% 100%;">
+        <h1>집에만 있다고 잔소리 듣는 너!</h1>
+    </div>
+    <div class="box" style="background-color:#008000; background: url('../static/image/image4.jpg') no-repeat fixed 50% 50%/100% 100%;">
+        <h1>할 일 없이 빈둥빈둥대는 바로 너!</h1>
+    </div>
+    <div class="box" style="background-color:#0000FF; background: url('../static/image/image5.jpg') no-repeat fixed 50% 50%/100% 100%;">
+        <h1>너를 위해 준비했다.</h1>
+    </div>
+    <div class="box" style="background-color:#4B0082; background: url('../static/image/image6.jpg') no-repeat fixed 50% 50%/100% 100%;">
+        <div class="last">
+        <h1>혼자 놀자!!</h1>
+        
+        <a href="{%url 'web_home'%}"><button>혼자 놀기</button></a>
+        </div>
+    </div>
+
+</body>
+</html>

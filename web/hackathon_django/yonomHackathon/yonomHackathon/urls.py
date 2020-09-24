@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from yonomApp import views 
+from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.web_home, name="web_home")
-]
+    path('', views.test2, name="test2"),
+    path('web_home', views.web_home, name="web_home"),
+    path('game_home/', views.game_home, name="game_home"),
+    path('game_login/', views.game_login, name="game_login"),
+    path('game_result', views.game_result, name="game_result"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -8,6 +8,7 @@
     <!-- style -->
     <link rel="stylesheet" href="{%static 'reset.css'%}">
     <link rel="stylesheet" href="{%static 'web_home.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
 
 
     <!-- 웹 폰트 -->
@@ -70,37 +71,37 @@
         <img id='심심해' src='../static/image/심심해.png' height='300px' width='300px'>
     </section>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
     <div id="div2">
         <br><br><br><br>
         <section id='content'>
-            <h1 id='main'>시작하기</h1>
+            <a href="{% url 'game_login'%}"><h1 id='main'>시작하기</h1></a>
             <br><br><br>
             <img id='심심해' src='../static/image/심심해.png' height='300px' width='300px'>
+            </div>
         </section>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
     <div id="div3">
-        <br><br><br><br>
+        <br><br><br>
         <section id='content'>
-            <h1 id='main'>만든사람</h1>
-            <br><br><br>
-            <img id='심심해' src='../static/image/심심해.png' height='300px' width='300px'>
-        </section>
+            <h3 id='main'>만든사람</h3>
+            <div class="team_info">
+                <div class="team_info_1">
+                    <div class="team_info_1_1">
+                        <img id='mj' src='../static/image/mj.jpg' height='300px' width='300px'>
+                    </div>
+                    <div class="team_info_1_2">
+                        <img id='mj' src='../static/image/ch.jpg' height='300px' width='300px'>                        
+                    </div>
+                </div>
+                <div class="team_info_2">
+                    <div class="team_info_2_1">
+                        <img id='mj' src='../static/image/sb.jpg' height='300px' width='300px'>                        
+                    </div>
+                    <div class="team_info_2_2">
+                        <img id='mj' src='../static/image/sy.jpg' height='300px' width='300px'>                        
+                    </div>
+                </div>
+            </div>
     </div>
     <!-- JavaScript Libraries -->
     <!-- <script src="js/jquery.min_1.12.4.js"></script> -->
